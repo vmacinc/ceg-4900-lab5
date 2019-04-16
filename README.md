@@ -79,17 +79,21 @@ Most web applications and web sites are created by downloading a CMS like the
 ones listed above and installing them on a server (typically this server would
 be running what is commonly called a LAMP stack, meaning the OS is Linux, and necessary 
 service running are Apache, Mysql, and PHP).  Most websites then customize the
-default CMS download with various custom scripts, themes, and plugins.  Our 
-`web_app_mapper.py` will use require a locally downloaded CMS from above and a 
+default CMS download with various custom scripts, themes, and plugins.  
+
+The AWS instance provided for Lab 5 contains a bare-bones web site.
+Deploy your lab 5 AWS instance and retrieve the Elastic IP address associated
+with it. Identify what CMS this site is running by typing the Elastic IP
+into your web browser and right click -> view page source.
+ 
+Our `web_app_mapper.py` will use require a locally downloaded CMS from above and a 
 target URL running the specified CMS.  `web_app_mapper.py` will attempt to 
 traverse the remote Url looking for files that are accessible.
 
-1. Investigate [https://dase.cs.wright.edu/](https://dase.cs.wright.edu/), what
-   CMS is it using (right click and view page source and page info).
-2. Download a local copy of the CMS used by https://dase.cs.wright.edu/ from one
-   of the CMS pages above.  (no response necessary).
+1. What CMS is your AWS instance using (right click and view page source and page info).
+2. Download a local copy of this CMS from one of the CMS pages above.  (no response necessary).
 3. Modify [`web_app_mapper.py`](../master/code/web_app_mapper.py) as necessary 
-   to map [https://dase.cs.wright.edu/](https://dase.cs.wright.edu/).  
+   to map your AWS web instance.  
    Copy paste your edited lines into your `answers.txt`.
 4. How long does it take to run `web_app_mapper.py` (if you can even complete
    the run)? How long does it take to get some results?
@@ -123,33 +127,23 @@ this purpose we will be using [`/code/content_bruter.py`](../master/code/content
    `SVNdigger-all.txt`?  How long before you started getting useful results?
 3. What sort of challenges would we face using the previous `web_app_mapper.py` 
    on [http://testphp.vulnweb.com](http://testphp.vulnweb.com)?
-4. Would `content_bruter.py` find anything different than `web_app_mapper.py`
-   on a site like [https://dase.cs.wright.edu/](https://dase.cs.wright.edu/)?
-   Why or why not?
-
-### Task 4 - Mapping Joomla
-The AWS instance provided for Lab 5 contains a bare-bones web site.
-Deploy your lab 5 AWS instance and retrieve the Elastic IP address associated
-with it.  Verify that the site is up and that it is indeed running Joomla by typing the IP address
-into your web browser and right click -> view page source.
-
-1. Does the page source give you the specific verison number of Joomla
-   installed?
-2. Modify `web_app_mapper.py` and `content_bruter.py` to scan your joomla site.
-   After a few minutes do they give you the same output?  Are there any
-   differences in files found by either?
-3. Investigate the `/administrator/` page on your Joomla site (view page source).
+4. Modify `content_bruter.py` to scan your AWS site.  Compare several minutes of
+   `content_bruter.py` and `web_app_mapper.py` when run on your AWS site.  Do 
+   they give you the same output?  Are there any differences in files found by either?
+5. Investigate the `/administrator/` page on your Joomla site (view page source).
    What are the actual input names associated with the `Username` and `Password`
    fields?
 
-### Task 5 - Lets get in!
-Now that we have a bit of information about this page lets get in.  Investigate
+### Task 4 - Lets get in!
+Now that we have a bit of information about this page lets brute force our way in.  Investigate
 [`joomla_killer.py`](../master/code/joomla_killer.py).  Modify the code so that
 it uses your joomla's /administrator page as its `target_url` and `target_post`
 location.  Use the included `cain-and-abel.txt` wordlist.
 
-1. Execute  `joomla_killer.py`, how long does it take to crack the password?
-2. Is this slower or faster than our John the Ripper cracker?  Why?
+1. Execute  `joomla_killer.py`, how long does it take to crack the password? (it
+   will crack the password relatively quickly, if you get more than halfway
+   through the a's you probably have a problem in your code).
+2. Is this slower or faster than our John the Ripper cracker?  Why / why not?
 3. Believe it or not this Joomla install is completely standard, I did not need
    to purposefully make it vulnerable to this attack.  How would you
    counter (defend against) this particular exploit?  

@@ -10,7 +10,7 @@ from HTMLParser import HTMLParser
 # general settings
 user_thread   = 5
 username      = "admin"
-wordlist_file = "/tmp/cain.txt"
+wordlist_file = "/path/to/wordlists/cain-and-abel.txt"
 resume        = None
 
 # target specific settings
@@ -20,7 +20,7 @@ target_post   = "http://192.168.112.131/administrator/index.php"
 username_field= "username"
 password_field= "passwd"
 
-success_check = "Administration - Control Panel"
+success_check = "Control Panel"
 
 
 class BruteParser(HTMLParser):

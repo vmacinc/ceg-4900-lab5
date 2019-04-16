@@ -142,7 +142,7 @@ into your web browser and right click -> view page source.
    What are the actual input names associated with the `Username` and `Password`
    fields?
 
-### Task 4 - Lets get in!
+### Task 5 - Lets get in!
 Now that we have a bit of information about this page lets get in.  Investigate
 [`joomla_killer.py`](../master/code/joomla_killer.py).  Modify the code so that
 it uses your joomla's /administrator page as its `target_url` and `target_post`

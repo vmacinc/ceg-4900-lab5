@@ -6,7 +6,7 @@ import urllib2
 threads   = 5 
 
 target    = "http://www.test.com"
-directory = "/Users/justin/Downloads/joomla-3.1.1"
+directory = "/Users/justin/Downloads/Drupal_7.2"
 filters   = [".jpg",".gif",".png",".css"]
 
 os.chdir(directory)

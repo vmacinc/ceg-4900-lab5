@@ -9,19 +9,23 @@ from HTMLParser import HTMLParser
 
 # general settings
 user_thread   = 5
-username      = "admin"
+username      = "administrator"
 wordlist_file = "/path/to/wordlists/cain-and-abel.txt"
-resume        = None
 
-# target specific settings
-target_url    = "http://192.168.112.131/administrator/index.php"
-target_post   = "http://192.168.112.131/administrator/index.php"
+# target specific settings (they should be the same)
+# make sure to include /administrator
+target_url    = ""
+target_post   = ""
 
-username_field= "username"
-password_field= "passwd"
+# username and password input names
+# Case SEnSitive!!!1!
+username_field= ""
+password_field= ""
+
+
 
 success_check = "Control Panel"
-
+resume        = None
 
 class BruteParser(HTMLParser):
     

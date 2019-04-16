@@ -12,6 +12,7 @@ Repository
 en.php
 .project
 admin
+administrator
 FCKeditor
 list.php
 templates_c
@@ -5282,7 +5283,6 @@ avatar.php
 4
 chrome
 Display
-administrator
 banner_manager.php
 banner_statistics.php
 html_output.php

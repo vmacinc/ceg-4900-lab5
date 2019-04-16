@@ -8,7 +8,7 @@ import Queue
 from HTMLParser import HTMLParser
 
 # general settings
-user_thread   = 10
+user_thread   = 5
 username      = "admin"
 wordlist_file = "/tmp/cain.txt"
 resume        = None

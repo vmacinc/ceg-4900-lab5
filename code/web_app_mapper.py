@@ -3,11 +3,11 @@ import threading
 import os
 import urllib2
 
-threads   = 10 
+threads   = 5 
 
 target    = "http://www.test.com"
 directory = "/Users/justin/Downloads/joomla-3.1.1"
-filters   = [".jpg",".gif","png",".css"]
+filters   = [".jpg",".gif",".png",".css"]
 
 os.chdir(directory)
 
